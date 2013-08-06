@@ -2,6 +2,9 @@ html{
 	overflow-y: scroll;
 }
 
+body{
+	font-family:Georgia, serif;
+}
 
 #header{
 	position: relative;
@@ -24,6 +27,9 @@ html{
 	background: blue;
 }
 
+#h1{
+	font-family:"Cambria", Georgia, serif;
+}
 /*#header-text{
 	position: absolute;
 	top: 60px;
