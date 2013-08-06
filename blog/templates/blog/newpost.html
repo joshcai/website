@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+
+{% load tagcheck %}
+
+{% block content %}
+<form action="{{ url }}" method="post">
+	<fieldset>
+		{% csrf_token %}
+		<legend>{{ title }}</legend>
+		<!--<label>Subject</label>-->
+		<input type="text" name="subject" value="{{ post.subject }}" placeholder="Subject" class="span6" />
+		<br />
+		<!--<label>Content</label>-->
+		<textarea rows="20" cols="80" name="content" placeholder="Content" class="span6">{{ post.content }}</textarea>
+		<br />
+		{% for tag in tags %}
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="{{tag.descript}}" {% ifequal title "Update" %} {% if post|tag:tag %} checked {% endif %} {% endifequal %}>
+					{{tag.descript}}
+				</label>
+			</div>
+		{% endfor %}
+		<button type="submit" class="btn">Submit</button>
+	</fieldset>
+</form>
+{{ error_message|safe }}
+{% endblock %}
+{% block navigation %}
+<a href="{% url 'blog:index' %}">Return to main page </a>
+{% endblock %}

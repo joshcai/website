@@ -1,0 +1,53 @@
+html{
+	overflow-y: scroll;
+}
+
+
+#header{
+	position: relative;
+	/*background-color: #086FA1;*/
+	height: 100%;
+}
+
+#header-bar {
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	height: 3em;
+	background: red;
+}
+
+#header-img{
+	position: absolute;
+	top: 0px;
+	left: 20%;
+	background: blue;
+}
+
+/*#header-text{
+	position: absolute;
+	top: 60px;
+	left:40%;
+	font-size:30pt;
+
+}*/
+
+#content-wrapper{
+	position: relative;
+	margin: 0 auto;
+	/*background-color: #3CA0D0;*/
+}
+
+
+.post-title{
+	font-size: 28px;
+}
+
+.checkbox-title{
+	width:90%;
+}
+
+.checkbox-wrapper{
+	width:200px;
+	float:right
+}

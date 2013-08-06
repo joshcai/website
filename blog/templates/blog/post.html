@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="well">
+	<span class="pull-right"><em>{{ post.date_str }}</em></span>
+	<span class="post-title">{{post.subject}}</span>
+	{{post.content_rendered|safe}}
+	<small>Tags: {% for tag in post.tags.all %} {{ tag.descript }} {% endfor %}</small>
+    {% if request.session.logged_in %}
+    <a href="{% url 'blog:update' post.id %}">Update</a>
+    <a href="{% url 'blog:delete' post.id %}">Delete</a>
+    {% endif %}
+</div>
+{% endblock %}
+{% block navigation %}
+<br />
+{% if prev %}
+<a href="{% url 'blog:post' prev.id %}">Prev</a> 
+{% endif %}
+{% if next %}
+<a href="{% url 'blog:post' next.id %}">Next</a> 
+{% endif %}
+{% endblock %}
