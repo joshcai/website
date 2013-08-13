@@ -23,7 +23,6 @@
 {% endblock %}
 
 {% block navigation %}
-<br />
 {% if prev %}
 <a href="{% url 'blog:index_num' page_num|add:"-1" %}">Prev</a> 
 	{% if not next %}

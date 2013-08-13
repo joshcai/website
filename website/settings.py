@@ -122,6 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'processing',
     'south', #database migration
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',

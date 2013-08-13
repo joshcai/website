@@ -9,30 +9,30 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" media="screen">
 	</head>
 	<body>
-		<div class="container">
+		<div class="container" id="container-wrapper">
 			<div class="row">
-				<div id="header" class="col-lg-3 text-right">
+				<div class="col-lg-3">
 					<!--<div id="header-bar"></div>-->
 					<!--<div id="header-img"><img src="http://placehold.it/200x150" /></div>-->
-					<div id="header-text"><h1>Josh Cai</h1></div>
-					<p>Sophomore at UTD studying CS/Math</p>
-					<a href="{% url 'blog:index' %}">Blog</a>
-					<br />
-					<a href="{% url 'blog:index' %}">About</a>
-					<br />
-					<a href="{% url 'blog:index' %}">Resume</a>
-					<br />
-					<a href="{% url 'blog:index' %}">Contact</a>
-					<br />										
-					{% if request.session.logged_in %}
-					<br />
-					<a href="{% url 'blog:newpost' %}">New Post</a>
-					<br />
-					<a href="{% url 'blog:logout' %}">Logout</a>
-					<br /> 
-					{% endif %}
-					{% block navigation %}
-					{% endblock %}
+					<div id="header" class="text-right">
+						<div id="header-text"><h1>Josh Cai</h1></div>
+						<p>Sophomore at UTD studying CS/Math</p>
+						<ul class="nav nav-pills nav-stacked">
+							<li class="active"><a href="{% url 'blog:index' %}">Blog</a></li>
+							<div class="sidebar-well">
+								{% block navigation %}
+								{% endblock %}
+							</div>
+							<li><a href="{% url 'blog:index' %}">About</a></li>
+							<li><a href="{% url 'blog:index' %}">Resume</a></li>
+							<li><a href="{% url 'blog:index' %}">Contact</a></li>
+							{% if request.session.logged_in %}
+							<br />
+							<li><a href="{% url 'blog:newpost' %}">New Post</a></li>
+							<li><a href="{% url 'blog:logout' %}">Logout</a></li>
+							{% endif %}
+						</ul>
+					</div>
 				</div>
 				<div id="content-wrapper" class="col-lg-6">
 					{% block content%}

@@ -9,6 +9,14 @@ html{
 	background-color: #254117;
 }
 */
+.cleared{
+	clear:both;
+}
+
+.centered{
+	float:none;
+	margin:0 auto;
+}
 #container-wrapper:
 {
 	position: relative;
@@ -31,6 +39,27 @@ html{
   border-bottom-left-radius:4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.min400{
+	min-width: 400px;
+}
+
+.space-top{
+	margin-top: 20px;
+}
+.space-top2{
+	margin-top: 10px;
+}
+
+textarea.fit-box{
+	border:1px solid #999999;
+    width:400px;
+    height:400px;
+    padding:3px;
+     -webkit-box-sizing: border-box; /* safari/chrome, other webkit */
+     -moz-box-sizing: border-box;    /* firefox, other gecko */
+     box-sizing: border-box;         /* opera/ie 8+ */
 }
 
 #header {
@@ -67,10 +96,6 @@ html{
 	background: blue;
 }
 
-#h1{
-	font-family:"Cambria", Georgia, serif;
-	font-color: #E5E4E2;
-}
 
 
 #content-wrapper{
@@ -83,6 +108,9 @@ html{
 .post-title{
 	font-size: 28px;
 }
+.post-title2{
+	font-size: 22px;
+}
 
 .checkbox-title{
 	width:90%;
@@ -91,4 +119,8 @@ html{
 .checkbox-wrapper{
 	width:200px;
 	float:right
+}
+
+.text-links{
+	font-size: 18px;
 }
