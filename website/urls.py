@@ -7,7 +7,7 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     # Examples:
     #url(r'^blog/', include('blog.urls', namespace="blog")),
-    url(r'^cs/', include('processing.urls', namespace="processing")),
+    #url(r'^cs/', include('processing.urls', namespace="processing")),
     url(r'^', include('blog.urls', namespace="blog")),
     # url(r'^$', 'website.views.home', name='home'),
     # url(r'^website/', include('website.foo.urls')),
