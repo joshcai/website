@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{% block title %}ResuMatch{% endblock %}</title>
+		<meta charset=”utf-8”> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="Resume Maker">
+	    <meta name="author" content="Josh Cai">
+	    <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.png"> -->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" media="screen">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" media="screen">
+	</head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'resume_app:index' %}">ResuMatch</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li {% if request.session.home %} class="active" {% endif %}><a href="{% url 'resume_app:index' %}">Home</a></li>
+            <li {% if request.session.explore %} class="active" {% endif %}><a href="{% url 'resume_app:explore' %}">Explore</a></li>
+            <li {% if request.session.build %} class="active" {% endif %}><a href="{% url 'resume_app:build' %}">Build</a></li>
+            <li {% if request.session.match %} class="active" {% endif %}><a href="{% url 'resume_app:match' %}">Match</a></li>
+          </ul>
+          {% if request.session.logged_in %}
+          <div class="navbar-form navbar-right">
+          <a href="{% url 'resume_app:logout' %}"><button type="button" class="btn btn-success">Logout</button></a>
+	      </div>
+          {% else %}
+          <form action="{% url 'resume_app:login' %}" method="post" class="navbar-form navbar-right">
+  			{% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="username" placeholder="Username" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+          {% endif %}
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+    {% block jumbo %}
+
+    {% endblock jumbo %}
+
+    <div class="container">
+    	{% block content %}
+    	{% endblock content %}
+      <hr>
+
+      <footer>
+        <p>&copy; Josh Cai 2013</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	</body>
+</html>

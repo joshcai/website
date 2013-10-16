@@ -1,0 +1,33 @@
+{% extends "resume_app/base.html" %}
+
+{% block jumbo %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1>ResuMatch</h1>
+        <p>Flexible Resume Building. Fast Job Matching. </p>
+        <p><a href="{% url 'resume_app:signup' %}" class="btn btn-primary btn-lg">Sign up now &raquo;</a></p>
+      </div>
+    </div>
+{% endblock jumbo %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-4">
+      <h2>Explore</h2>
+      <p>Don’t just rely on automated systems! If people are judging your resume, get other people’s opinions on them first! Get critiques on your resume for free. Compare your resume to other submitted resumes. Consider suggestions made by others and build a more competitive resume! </p>
+      <p><a class="btn btn-default" href="{% url 'resume_app:explore' %}">View details &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+      <h2>Build</h2>
+      <p>Build your Resume. Build your future. Build your dream job. At ResuMatch, we help you create your resume using a few simple steps. We let you customize the way, recruiters would like to see you and help you leave a lasting impression on them.</p>
+      <p><a class="btn btn-default" href="{% url 'resume_app:build' %}">View details &raquo;</a></p>
+   </div>
+    <div class="col-lg-4">
+      <h2>Match</h2>
+      <p>ResuMatch is the resume site that will match your resume to job listings! After you build your resume, ResuMatch will look through listings on leading job sites to find jobs that fit your strong suit. This phase is another step in making your job search faster and more efficient.</p>
+      <p><a class="btn btn-default" href="{% url 'resume_app:match' %}">View details &raquo;</a></p>
+    </div>
+  </div>
+
+
+{% endblock %}
