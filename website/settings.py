@@ -73,11 +73,10 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 PROJECT_DIR = os.path.join(BASE_DIR, '../blog')
-PROJECT_DIR = os.path.join(BASE_DIR, '../resume_app')
+PROJECT_DIR2 = os.path.join(BASE_DIR, '../resume_app')
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
     os.path.join(PROJECT_DIR,'static/'),
     os.path.join(PROJECT_DIR2,'static/'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
