@@ -3,6 +3,17 @@ html{
 	overflow-y: scroll;
 }
 
+/*div {
+    border: 1px solid #000000;
+}
+* :hover { outline: 2px dotted red }
+* * :hover { outline: 2px dotted green }
+* * * :hover { outline: 2px dotted orange }
+* * * * :hover { outline: 2px dotted blue }
+* * * * * :hover { outline: 1px solid red }
+* * * * * * :hover { outline: 1px solid green }
+* * * * * * * :hover { outline: 1px solid orange }
+* * * * * * * * :hover { outline: 1px solid blue }*/
 
 /*body{
 	font-family:Georgia, serif;
@@ -34,21 +45,26 @@ html{
 }
 
 #header {
-    position:fixed;
+    /*position:fixed;*/
+    text-align:right;
     /*width:21.97%;*/
 }
 
-@media (max-width: 767px) {
+
+@media (min-width: 768px) {
     #header {
-        position:static;
-        width:auto;
+    	text-align:center;
+
+    }
+    #header-links{
+    	margin: 0 auto;
+		float: none;
     }
 }
 
-@media (max-width: 979px) {
+@media (min-width: 992px) {
     #header {
-    	position: static;
-    	width:auto;
+    	text-align:right;
     }
 }
 
@@ -67,8 +83,8 @@ html{
 	background: blue;
 }
 
-#h1{
-	font-family:"Cambria", Georgia, serif;
+h1{
+	font-family:'Open Sans', "Cambria", Georgia, serif;
 	font-color: #E5E4E2;
 }
 
@@ -76,9 +92,13 @@ html{
 #content-wrapper{
 	position: relative;
 	margin: 0 auto;
+	margin-top: 25px;
 	/*background-color: #3CA0D0;*/
 }
-
+.centered{
+	margin: 0 auto;
+	float: none;
+}
 
 .post-title{
 	font-size: 28px;

@@ -22,6 +22,26 @@ def render_post(content):
 			new_content+="<p>"+temp+"</p>\n"
 	return new_content
 
+def contact(request):
+	context = {
+		'nav' : 'contact',
+		'request': request,
+	}
+	return render(request, 'blog/contact.html', context)
+
+def resume(request):
+	context = {
+		'nav' : 'resume',
+		'request': request,
+	}
+	return render(request, 'blog/resume.html', context)
+def about(request):
+	context = {
+		'nav' : 'about',
+		'request': request,
+	}
+	return render(request, 'blog/about.html', context)
+
 def index(request, page_num=1):
 	tags = Tag.objects.all()
 	query = Q()
@@ -50,6 +70,7 @@ def index(request, page_num=1):
 		'page_num': page_num,
 		'request': request,
 		'tags': tags,
+		'nav': 'blog',
 		}
 	if filtered:
 		context['filtered'] = True
@@ -81,9 +102,10 @@ def newpost(request):
 					'title': "New Post",
 					'request': request,
 					'tags': tags,
+					'nav': 'blog',
 				}
 				return render(request, 'blog/newpost.html', context)
-		return render(request, 'blog/newpost.html', {'url': reverse('blog:newpost'), 'title': "New Post", 'request': request, 'tags': tags})
+		return render(request, 'blog/newpost.html', {'url': reverse('blog:newpost'), 'title': "New Post", 'request': request, 'tags': tags, 'nav': 'blog',})
 	else:
 		return HttpResponseRedirect(reverse('blog:index'))
 
@@ -97,6 +119,7 @@ def update(request, post_id):
 			'title': "Update",
 			'request': request,
 			'tags': tags,
+			'nav': 'blog',
 		}
 		if request.method == 'POST':
 			if request.POST['subject'] and request.POST['content']:
@@ -119,7 +142,7 @@ def update(request, post_id):
 		return HttpResponseRedirect(reverse('blog:index'))
 
 def login(request):
-	context={'request': request}
+	context={'request': request, 'nav': 'blog',}
 	if request.method == 'POST':
 		if request.POST['password'] == secrets.login_password:
 			request.session['logged_in'] = True
@@ -144,6 +167,7 @@ def post(request, post_id):
 	context={
 		'post': post,
 		'request': request,
+		'nav': 'blog',
 	}
 	tags = Tag.objects.all()
 	query = Q()

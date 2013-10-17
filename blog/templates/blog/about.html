@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+<!-- add some white space here?  -->
+{% if blog_entries %}
+    {% for post in blog_entries %}
+    	<div class="well">
+    		<!-- fix so that subject has priority? -->
+	    	<span class="pull-right"><em>{{ post.date_str }}</em></span>
+    		<span class="post-title"><a href="{% url 'blog:post' post.id %}">{{ post.subject }}</a></span>
+	        <p>{{ post.content_rendered|safe }}</p>
+	        {% if request.session.logged_in %}
+	        <a href="{% url 'blog:update' post.id %}">Update</a>
+	        <a href="{% url 'blog:delete' post.id %}">Delete</a>
+	        {% endif %}
+	    </div>
+    {% endfor %}
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
+{% endblock %}
+
