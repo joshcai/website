@@ -278,18 +278,17 @@ def matched(request, file_name):
 	jobs = Job.objects.all()
 	user = User.objects.get(username=request.session['logged_in'])
 	resumes = Resume.objects.filter(user_id=user)
-	max_ratio=0
-	max_ref = jobs[0]
-	for job in jobs:
-		ratio = StringCompare.matchWords(job.skills.encode('utf-8'), resume.skill_string.encode('utf-8'))
-		print ratio
-		if ratio > max_ratio:
-			max_ref = job
-			max_ratio = ratio
+	# max_ratio=0
+	# max_ref = jobs[0]
+	# for job in jobs:
+	# 	ratio = StringCompare.matchWords(job.skills.encode('utf-8'), resume.skill_string.encode('utf-8'))
+	# 	print ratio
+	# 	if ratio > max_ratio:
+	# 		max_ref = job
+	# 		max_ratio = ratio
 	context={
 			'request':request,
-			'matched': True,
-			'job': max_ref,
+			'matched': False,
 			'resume': resume,
 	}
 	return render(request, 'resume_app/match.html',context)

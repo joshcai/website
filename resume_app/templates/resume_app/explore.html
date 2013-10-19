@@ -6,7 +6,7 @@
     <div class="col-lg-8 centered text-center">
       {% if resumes %}
         {% for resume in resumes %}
-          <a href="/display/{{resume.resume}}/"><h3><em>{{resume.resume}}</em> by {{resume.user_id.username}}</h3></a>
+          <a href="/resumatch/display/{{resume.resume}}/"><h3><em>{{resume.resume}}</em> by {{resume.user_id.username}}</h3></a>
         {% endfor %}
       {% endif %}
     </div>
