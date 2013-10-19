@@ -36,4 +36,6 @@ nosetests.xml
 
 website/secrets.py
 
+resume_app/generated/*.pdf
+
 *.DS_Store

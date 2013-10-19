@@ -31,9 +31,9 @@
 		</object>
       {% endif %}
     	{%if resumes %}
-    		<h2>Match Resumes</h2>
+    		<h2>Match Resumes (feature was not fully implemented)</h2>
     		{% for resume in resumes %}
-    			<a href="/matched/{{resume.resume}}">{{resume.resume}}</a>
+    			<a href="/resumatch/matched/{{resume.resume}}">{{resume.resume}}</a>
     			<br />
     		{% endfor %}
     	{% endif %}

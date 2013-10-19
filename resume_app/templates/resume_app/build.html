@@ -1,6 +1,6 @@
 {% extends "resume_app/base.html" %}
 
-{% load tagcheck %}
+{% load tagcheck2 %}
 
 {% block content %}
   <div class="row spaced">
@@ -195,7 +195,7 @@
               <h3>{{set.name}}</h3>
               {% if skills %}
                 {% for skill in skills %}
-                    {% if set|tagcheck:skill.skill_set %}
+                    {% if set|tagcheck2:skill.skill_set %}
                       {{skill.name}}
                     {% endif %}
 
