@@ -4,6 +4,8 @@
 
 {% block content %}
 <!-- add some white space here?  -->
+<h2>Blog</h2>
+<hr >
 {% if blog_entries %}
     {% for post in blog_entries %}
     	<div class="well">
@@ -11,7 +13,7 @@
 	    	<span class="pull-right"><em>{{ post.date_str }}</em></span>
     		<span class="post-title"><a href="{% url 'blog:post' post.id %}">{{ post.subject }}</a></span>
 	        <p>{{ post.content_rendered|safe }}</p>
-	        {% if request.session.logged_in %}
+	        {% if request.session.logged_in_blog %}
 	        <a href="{% url 'blog:update' post.id %}">Update</a>
 	        <a href="{% url 'blog:delete' post.id %}">Delete</a>
 	        {% endif %}

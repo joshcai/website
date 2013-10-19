@@ -2,8 +2,8 @@
 html{
 	overflow-y: scroll;
 }
-
-/*div {
+/*
+div {
     border: 1px solid #000000;
 }
 * :hover { outline: 2px dotted red }
@@ -62,7 +62,7 @@ html{
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     #header {
     	text-align:right;
     }
@@ -83,9 +83,8 @@ html{
 	background: blue;
 }
 
-h1{
+h1,h2{
 	font-family:'Open Sans', "Cambria", Georgia, serif;
-	font-color: #E5E4E2;
 }
 
 
@@ -111,4 +110,14 @@ h1{
 .checkbox-wrapper{
 	width:200px;
 	float:right
+}
+.img-thumb {
+  display: inline-block;
+  height: auto;
+  padding: 4px;
+  line-height: 1.428571429;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
 }

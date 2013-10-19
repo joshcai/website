@@ -82,7 +82,7 @@ def index(request, page_num=1):
 	return render(request, 'blog/index.html', context)
 
 def newpost(request):
-	if 'logged_in' in request.session and request.session['logged_in']:
+	if 'logged_in_blog' in request.session and request.session['logged_in_blog']:
 		tags = Tag.objects.all()
 		if request.method == 'POST':
 			if request.POST['subject'] and request.POST['content']:
@@ -110,7 +110,7 @@ def newpost(request):
 		return HttpResponseRedirect(reverse('blog:index'))
 
 def update(request, post_id):
-	if 'logged_in' in request.session and request.session['logged_in']:
+	if 'logged_in_blog' in request.session and request.session['logged_in_blog']:
 		post = get_object_or_404(Post, pk=post_id)
 		tags = Tag.objects.all()
 		context={
@@ -145,18 +145,18 @@ def login(request):
 	context={'request': request, 'nav': 'blog',}
 	if request.method == 'POST':
 		if request.POST['password'] == secrets.login_password:
-			request.session['logged_in'] = True
+			request.session['logged_in_blog'] = True
 			return HttpResponseRedirect(reverse('blog:index'))
 		else:
 			context['error_message'] = "Invalid password<br />"
 	return render(request, 'blog/login.html', context) 
 
 def logout(request):
-	request.session['logged_in'] = False
+	request.session['logged_in_blog'] = False
 	return HttpResponseRedirect(reverse('blog:index'))
 
 def delete(request, post_id):
-	if 'logged_in' in request.session and request.session['logged_in']:
+	if 'logged_in_blog' in request.session and request.session['logged_in_blog']:
 		post = get_object_or_404(Post, pk=post_id)
 		post.deleted = True
 		post.save()

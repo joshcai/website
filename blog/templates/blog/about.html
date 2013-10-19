@@ -1,23 +1,86 @@
 {% extends "blog/base.html" %}
 
+{% load staticfiles %}
 
 {% block content %}
 <!-- add some white space here?  -->
-{% if blog_entries %}
-    {% for post in blog_entries %}
-    	<div class="well">
-    		<!-- fix so that subject has priority? -->
-	    	<span class="pull-right"><em>{{ post.date_str }}</em></span>
-    		<span class="post-title"><a href="{% url 'blog:post' post.id %}">{{ post.subject }}</a></span>
-	        <p>{{ post.content_rendered|safe }}</p>
-	        {% if request.session.logged_in %}
-	        <a href="{% url 'blog:update' post.id %}">Update</a>
-	        <a href="{% url 'blog:delete' post.id %}">Delete</a>
-	        {% endif %}
-	    </div>
-    {% endfor %}
-{% else %}
-    <p>No posts are available.</p>
-{% endif %}
-{% endblock %}
 
+<div class="">
+	<h2>&nbsp;About Me</h2>
+	<hr >
+	<div style="width:90%;" class="centered">
+		<div class="text-center">
+			<img style="padding-bottom:10px;"src="{% static 'img/profile.jpg' %}" alt="Hello World!" class="img-circle" width="100">
+			<p>19-year-old studying computer science and mathematics at the <a href="http://www.utdallas.edu/">University of Texas at Dallas</a> and working as a software developer intern at <a href="http://randomlogics.com">RandomLogics</a></p>
+			<br />
+		</div>
+		<p><strong>Currently taking:</strong></p>
+		<table class="table">
+			<tr>
+				<td class="text-right"><a href="http://go.utdallas.edu/cs4348.hon.13f">CS4348</a></td>
+				<td>Operating System Concepts</td>
+			</tr>
+			<tr>
+				<td class="text-right"><a href="http://go.utdallas.edu/cs4349.002.13f">CS4349</a></td>
+				<td>Advanced Algorithm Design and Analysis</td>
+			</tr>
+			<tr>
+				<td class="text-right"><a href="http://go.utdallas.edu/cs4384.501.13f">CS4384</a></td>
+				<td>Automata Theory</td>
+			</tr>
+			<tr>
+				<td class="text-right"><a href="http://go.utdallas.edu/univ2v99.hn3.13f">UNIV2V99</a></td>
+				<td>Readings in Probability and Random Occurence</td>
+			</tr>
+		</table>
+		<p><strong>Other sites:</strong></p>
+		<table style="margin-bottom:5px" class="table">
+			<tr>
+				<td class="text-right"><a href="../resumatch"><img src="{% static 'img/web_resume.png' %}" class="img-thumb"></a></td>
+				<td>
+					<p>
+						<a href="../resumatch"><strong>ResuMatch</strong></a>
+						<br />
+						Built at a hackathon in less than 24 hours - the idea was to generate resumes and match them to job listings
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="text-right"><a href="http://utdmathclub.herokuapp.com"><img src="{% static 'img/web_math.png' %}" class="img-thumb"></a></td>
+				<td>
+					<p>
+						<a href="http://utdmathclub.herokuapp.com"><strong>UTD Math Club</strong></a>
+						<br />
+						Created a blog-style website for the UTD Math Club - although no one really uses it right now 
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="text-right"><a href="http://utdcs.herokuapp.com"><img src="{% static 'img/web_cs.png' %}" class="img-thumb"></a></td>
+				<td>
+					<p>
+						<a href="http://utdcs.herokuapp.com"><strong>UTD JavaScript Camp</strong></a>
+						<br />
+						Volunteered at a camp to teach high school kids how to code - they uploaded their JavaScript code here
+					</p>
+				</td>
+			</tr>
+		</table>
+		<div class="text-center">
+			...and some more on <a href="https://github.com/joshcai">GitHub</a>
+		</div>
+		<br />
+		<div>
+
+		</div>
+
+<!-- 		<div style="padding-left:20px" class="text-left">
+			<p><a href="http://go.utdallas.edu/cs4348.hon.13f">CS4348</a> Operating System Concepts</p>
+			<p><a href="http://go.utdallas.edu/cs4349.002.13f">CS4349</a> Advanced Algorithm Design and Analysis</p>
+			<p><a href="http://go.utdallas.edu/cs4384.501.13f">CS4384</a> Automata Theory</p>
+			<p><a href="http://go.utdallas.edu/univ2v99.hn3.13f">UNIV2V99</a> Readings in Probability and Random Occurrence</p>
+		</div> -->
+	</div>
+</div>
+
+{% endblock %}

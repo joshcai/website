@@ -3,7 +3,7 @@ html{
 	overflow-y: scroll;
 }
 /*debug*/
-
+/*
 div {
     border: 1px solid #000000;
 }
@@ -14,7 +14,7 @@ div {
 * * * * * :hover { outline: 1px solid red }
 * * * * * * :hover { outline: 1px solid green }
 * * * * * * * :hover { outline: 1px solid orange }
-* * * * * * * * :hover { outline: 1px solid blue }
+* * * * * * * * :hover { outline: 1px solid blue }*/
 
 /*debug end*/
 
