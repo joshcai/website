@@ -5,8 +5,8 @@ html{
 /*
 div {
     border: 1px solid #000000;
-}
-* :hover { outline: 2px dotted red }
+}*/
+/** :hover { outline: 2px dotted red }
 * * :hover { outline: 2px dotted green }
 * * * :hover { outline: 2px dotted orange }
 * * * * :hover { outline: 2px dotted blue }
@@ -53,6 +53,7 @@ div {
 
 @media (min-width: 768px) {
     #header {
+    	position: static;
     	text-align:center;
 
     }
@@ -64,6 +65,7 @@ div {
 
 @media (min-width: 1200px) {
     #header {
+    	position: fixed;
     	text-align:right;
     }
 }
