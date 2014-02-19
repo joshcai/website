@@ -11,7 +11,6 @@ urlpatterns = patterns('',
     #url(r'^cs/', include('processing.urls', namespace="processing")),
     #url(r'^cs/', include('processing.urls', namespace="processing")),
     url(r'^', include('blog.urls', namespace="blog", app_name='blog')),
-    url(r'^resumatch/', include('resume_app.urls', namespace="resume_app", app_name='resume_app')),
     # url(r'^$', 'website.views.home', name='home'),
     # url(r'^website/', include('website.foo.urls')),
 

@@ -131,7 +131,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'resume_app',
     'south', #database migration
     'gunicorn',
     # Uncomment the next line to enable the admin:
