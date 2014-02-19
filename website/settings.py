@@ -55,7 +55,7 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MEDIA_ROOT = os.path.join(BASE_DIR,'../resume_app/generated')
+# MEDIA_ROOT = os.path.join(BASE_DIR,'../resume_app/generated')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -73,12 +73,10 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 PROJECT_DIR = os.path.join(BASE_DIR, '../blog')
-PROJECT_DIR2 = os.path.join(BASE_DIR, '../resume_app')
 
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR,'static/'),
-    os.path.join(PROJECT_DIR2,'static/'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
